@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Workitout!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="countdown">01:00</string>
+    <string name="set">Sit Up</string>
+    <string name="start">Start</string>
+    <string name="pause">Pause</string>
+    <string name="reset">Reset</string>
+    <string name="take_exercise">Take this exercise program for 10 minutes!</string>
+    <string name="start_exercise">Start Exercise</string>
+    <string name="add_to_calendar">Add to Calendar</string>
+    <string name="program_name">Full Body Burn</string>
+    <string name="exercise_program">Exercise Program</string>
+    <string name="minutes">(10 minutes)</string>
+    <string name="pick_date_time">Pick date and time</string>
+    <string name="timezone_changed">Timezone changed! Be sure when you add your exercise program to your calendar</string>
+</resources>

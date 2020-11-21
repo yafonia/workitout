@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="16dp">
+
+
+        <ImageView
+            android:id="@+id/program_image"
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            ></ImageView>
+
+        <TextView
+            android:id="@+id/day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/colorAccent"
+            android:layout_below="@+id/program_image"
+            tools:text="Monday"/>
+
+<!--        <TextView-->
+<!--            android:id="@+id/task"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            tools:text="Study sorting algorithms"/>-->
+
+    </RelativeLayout>
+</layout>
