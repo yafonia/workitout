@@ -41,9 +41,12 @@ public class SharedViewModel extends ViewModel {
         @Override
         protected Void doInBackground(AppDatabase... db) {
 
-            program_list.add(new Item("0", "Full Body Burn", "Sit Up, Back Up, Push Up", "", R.drawable.full_body_burn));
-            program_list.add(new Item("1", "Small Waist", "Plank, In & Out Squat, Clap Jacks", "", R.drawable.cork_screw));
-            program_list.add(new Item("2", "Lower abs", "Lateral Lunge Hop, Curtsy Lunges, Jumping Jacks", "", R.drawable.small_waist));
+            program_list.add(new Item("0", "Full Body Burn", "Sit Up, Back Up, Push Up", "", R.drawable.full_body_burn_pic));
+            program_list.add(new Item("1", "Small Waist", "Plank, In & Out Squat, Clap Jacks", "", R.drawable.cork_screw_pic));
+            program_list.add(new Item("2", "Lower Abs", "Lateral Lunge Hop, Curtsy Lunges, Jumping Jacks", "", R.drawable.small_waist_pic));
+            program_list.add(new Item("3", "Upper Body", "Sit Up, Back Up, Push Up", "", R.drawable.full_body_burn_pic));
+            program_list.add(new Item("4", "Flat Belly", "Plank, In & Out Squat, Clap Jacks", "", R.drawable.cork_screw_pic));
+            program_list.add(new Item("5", "Slim Legs", "Lateral Lunge Hop, Curtsy Lunges, Jumping Jacks", "", R.drawable.small_waist_pic));
             db[0].itemDao().insert(program_list);
 
             return null;

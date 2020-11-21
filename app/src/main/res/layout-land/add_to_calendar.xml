@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".AddToCalendarFragment">
+
+    <TextView
+        android:id="@+id/program_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/program_name"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="120dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/exercise_program"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exercise_program"
+        android:layout_below="@+id/program_name"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="120dp"
+        android:gravity="center"
+        android:textSize="23sp"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minutes"
+        android:layout_below="@+id/exercise_program"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="120dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <EditText
+        android:hint="@string/pick_date_time"
+        android:id="@+id/date_time_input"
+        android:inputType="none"
+        android:gravity="center"
+        android:layout_below="@+id/minutes"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button_add_to_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date_time_input"
+        android:layout_marginStart="11dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/add_to_calendar" />
+
+</RelativeLayout>
+</layout>

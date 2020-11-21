@@ -43,7 +43,6 @@ public class QueryHandlerCalendar extends AsyncQueryHandler {
             queryHandler = new QueryHandlerCalendar(resolver);
 
         ContentValues values = new ContentValues();
-        Log.d(TAG, "start time = " + Long.toString(startTime));
         values.put(CalendarContract.Events.DTSTART, startTime);
         values.put(CalendarContract.Events.DTEND, endTime);
         values.put(CalendarContract.Events.TITLE, title);

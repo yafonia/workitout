@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.provider.CalendarContract;
 import android.text.InputType;
@@ -28,6 +29,8 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.widget.TimePicker;
 
+import org.w3c.dom.Text;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -37,14 +40,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import id.ac.ui.cs.mobileprogramming.yafonia.workitout.databinding.AddToCalendarBinding;
 import id.ac.ui.cs.mobileprogramming.yafonia.workitout.databinding.FragmentDetailsBinding;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class AddToCalendarFragment extends Fragment {
-
-    private FragmentDetailsBinding binding;
-
 
     public AddToCalendarFragment() {
         // Required empty public constructor
@@ -62,8 +63,14 @@ public class AddToCalendarFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         EditText pick_date_time = (EditText) view.findViewById(R.id.date_time_input);
+        TextView exercise_name = (TextView) view.findViewById(R.id.program_name);
         Button add_to_calendar = (Button) view.findViewById(R.id.button_add_to_calendar);
         pick_date_time.setInputType(InputType.TYPE_NULL);
+
+        SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        viewModel.getSelected().observe(getViewLifecycleOwner(), item -> {
+            exercise_name.setText(item.getName());
+        });
 
         pick_date_time.setOnClickListener((new View.OnClickListener() {
             @Override
@@ -116,10 +123,13 @@ public class AddToCalendarFragment extends Fragment {
         }
 
      private void add_event(String date_time_value) {
-
+         SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
          long milliseconds = convertDateToLong(date_time_value);
-         QueryHandlerCalendar.insertEvent(getActivity(), milliseconds,
-                 milliseconds + 600*1000, "coba");
+         viewModel.getSelected().observe(getViewLifecycleOwner(), item -> {
+             QueryHandlerCalendar.insertEvent(getActivity(), milliseconds,
+                     milliseconds + 600*1000, item.getName() + " " + getString(R.string.exercise_program));
+         });
+
     }
 
     private void checkPermission(int callbackId, String... permissionsId) {

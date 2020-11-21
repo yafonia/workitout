@@ -9,7 +9,7 @@
     tools:context=".AddToCalendarFragment">
 
     <TextView
-        android:id="@+id/take_exercise"
+        android:id="@+id/program_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/program_name"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/exercise_program"
-        android:layout_below="@+id/take_exercise"
+        android:layout_below="@+id/program_name"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="40dp"
         android:layout_marginLeft="120dp"

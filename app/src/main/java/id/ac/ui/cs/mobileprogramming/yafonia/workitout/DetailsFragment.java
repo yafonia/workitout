@@ -22,6 +22,7 @@ public class DetailsFragment extends Fragment {
 
     private FragmentDetailsBinding binding;
     Item item_null = null;
+    MainActivity activity;
 
 
     public DetailsFragment() {
@@ -31,6 +32,7 @@ public class DetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false);
+        activity =(MainActivity) requireActivity();
         return binding.getRoot();
     }
 
@@ -40,7 +42,7 @@ public class DetailsFragment extends Fragment {
         SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         viewModel.getSelected().observe(getViewLifecycleOwner(), item -> {
-            binding.takeExercise.setText("Take " + item.getName() + " program for 10 minutes!");
+            binding.takeExercise.setText(getString(R.string.take) + " " + item.getName() + " " + getString(R.string.program_ten_minutes));
             item_null = item;
         });
     }
@@ -49,13 +51,13 @@ public class DetailsFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        activity.backButtonDisabled = false;
         viewModel.getSelected().observe(getViewLifecycleOwner(), item -> {
             ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(item.getName());
 
         });
         Button add_to_calendar = (Button) binding.getRoot().findViewById(R.id.add_to_calendar);
         Button start_exercise = (Button) binding.getRoot().findViewById(R.id.start_exercise);
-
         add_to_calendar.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {

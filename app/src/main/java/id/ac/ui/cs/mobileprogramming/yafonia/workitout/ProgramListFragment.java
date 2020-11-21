@@ -30,10 +30,10 @@ import id.ac.ui.cs.mobileprogramming.yafonia.workitout.databinding.ProgramListIt
 public class ProgramListFragment extends Fragment {
     private FragmentProgramListBinding binding;
     private DetailsFragment detailsFragment = new DetailsFragment();
+    MainActivity activity;
 
 
     public ProgramListFragment() {
-
     }
 
     @Override
@@ -46,6 +46,7 @@ public class ProgramListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        activity =(MainActivity) requireActivity();
         SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class,"programs").allowMainThreadQueries().build();
         List<Item> list = new ArrayList<>();
@@ -63,8 +64,10 @@ public class ProgramListFragment extends Fragment {
                         .commit();
                 });
         });
+        activity.backButtonDisabled = false;
 
     }
+
 
 }
 
