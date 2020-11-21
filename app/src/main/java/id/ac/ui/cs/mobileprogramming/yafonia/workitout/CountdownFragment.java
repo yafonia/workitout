@@ -23,11 +23,11 @@ import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class CountdownFragment extends Fragment {
     String[] exercises;
-    private static volatile int second = 10;
+    public static volatile int second = 10;
     HandlerThread handlerThread = new HandlerThread("MyHandlerThread");
     Handler timerHandler;
     Runnable task;
-    private static volatile boolean isExecuted = false;
+    public static volatile boolean isExecuted = false;
     MainActivity activity;
     int indexCurrentProgram = 0;
 
@@ -126,7 +126,11 @@ public class CountdownFragment extends Fragment {
         };
         timerHandler.post(task);
     }
-}
+
+    }
+
+
+
 
 
 

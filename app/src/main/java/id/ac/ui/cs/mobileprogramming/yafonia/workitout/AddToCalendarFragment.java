@@ -48,7 +48,6 @@ import static androidx.constraintlayout.widget.Constraints.TAG;
 public class AddToCalendarFragment extends Fragment {
 
     public AddToCalendarFragment() {
-        // Required empty public constructor
     }
 
 

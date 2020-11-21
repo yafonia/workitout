@@ -40,7 +40,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.binding.day.setText(list.get(position).getName());
+        holder.binding.program.setText(list.get(position).getName());
         holder.binding.programImage.setImageResource(list.get(position).getPicture());
 
     }
