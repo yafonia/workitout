@@ -5,8 +5,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.res.Configuration;
+import id.ac.ui.cs.mobileprogramming.yafonia.workitout.Notification;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Window;
 
@@ -18,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Notification notification = new Notification();
         requestWindowFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_main);
 
@@ -45,4 +49,6 @@ public class MainActivity extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
         setContentView(R.layout.activity_main);
     }
+
+
 }

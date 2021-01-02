@@ -1,0 +1,19 @@
+{
+  "buildFiles": [
+    "/Users/yafonia/Library/Android/sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake",
+    "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/src/main/c/CMakeLists.txt",
+    "/Users/yafonia/Library/Android/sdk/ndk/21.3.6528147/build/cmake/platforms.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/yafonia/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/x86\" clean"
+  ],
+  "buildTargetsCommand": "/Users/yafonia/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "decrement-lib-Debug-x86": {
+      "artifactName": "decrement-lib",
+      "buildCommand": "/Users/yafonia/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/x86\" decrement-lib",
+      "abi": "x86",
+      "output": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/build/intermediates/cmake/debug/obj/x86/libdecrement-lib.so"
+    }
+  }
+}

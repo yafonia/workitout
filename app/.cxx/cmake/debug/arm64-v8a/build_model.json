@@ -1,0 +1,70 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout",
+      "sdkFolder": "/Users/yafonia/Library/Android/sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/build/intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app",
+      "makeFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/src/main/c/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout/.cxx",
+      "cxxFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx",
+      "ndkFolder": "/Users/yafonia/Library/Android/sdk/ndk/21.3.6528147",
+      "ndkVersion": "21.3.6528147",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [],
+    "variantName": "debug",
+    "soFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/build/intermediates/cmake/debug/lib",
+    "objFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/build/intermediates/cmake/debug/obj",
+    "jsonFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug",
+    "gradleBuildOutputFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cxx/debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARM64_V8A",
+  "abiPlatformVersion": 22,
+  "cxxBuildFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/arm64-v8a",
+  "jsonFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/arm64-v8a/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cxx/debug/arm64-v8a",
+  "objFolder": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/build/intermediates/cmake/debug/obj/arm64-v8a",
+  "buildCommandFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/arm64-v8a/build_command.txt",
+  "buildOutputFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/arm64-v8a/build_output.txt",
+  "modelOutputFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/arm64-v8a/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cxx/debug/arm64-v8a/CMakeLists.txt",
+    "toolchainWrapperFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cxx/debug/arm64-v8a/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cxx/debug/arm64-v8a/build_generation_state.json",
+    "cacheKeyFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cxx/debug/arm64-v8a/compiler_cache_key.json",
+    "compilerCacheUseFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cxx/debug/arm64-v8a/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cxx/debug/arm64-v8a/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cxx/debug/arm64-v8a/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/arm64-v8a/json_generation_record.json",
+  "compileCommandsJsonFile": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/arm64-v8a/compile_commands.json"
+}

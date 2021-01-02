@@ -8,7 +8,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.CalendarContract;
 import android.util.Log;
-
 import java.util.TimeZone;
 
 public class QueryHandlerCalendar extends AsyncQueryHandler {

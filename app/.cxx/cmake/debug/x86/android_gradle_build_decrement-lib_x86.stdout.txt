@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/x86'
+ninja: no work to do.

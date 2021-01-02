@@ -2,9 +2,15 @@ package id.ac.ui.cs.mobileprogramming.yafonia.workitout;
 
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -15,7 +21,9 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.os.SystemClock;
 import android.provider.CalendarContract;
+import android.provider.Settings;
 import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,6 +36,8 @@ import android.widget.TextView;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.widget.TimePicker;
+import android.widget.Toast;
+import id.ac.ui.cs.mobileprogramming.yafonia.workitout.QueryHandlerCalendar;
 
 import org.w3c.dom.Text;
 
@@ -61,9 +71,9 @@ public class AddToCalendarFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        EditText pick_date_time = (EditText) view.findViewById(R.id.date_time_input);
-        TextView exercise_name = (TextView) view.findViewById(R.id.program_name);
-        Button add_to_calendar = (Button) view.findViewById(R.id.button_add_to_calendar);
+        EditText pick_date_time = view.findViewById(R.id.date_time_input);
+        TextView exercise_name = view.findViewById(R.id.program_name);
+        Button add_to_calendar = view.findViewById(R.id.button_add_to_calendar);
         pick_date_time.setInputType(InputType.TYPE_NULL);
 
         SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
@@ -81,10 +91,9 @@ public class AddToCalendarFragment extends Fragment {
         add_to_calendar.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final int callbackId = 42;
-                checkPermission(callbackId, Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR);
+
                 String date = pick_date_time.getText().toString();
-                add_event(date);
+                addEvent(date);
             }
         }));
     }
@@ -121,25 +130,30 @@ public class AddToCalendarFragment extends Fragment {
 
         }
 
-     private void add_event(String date_time_value) {
+     private void addEvent(String date_time_value) {
+         final int callbackId = 42;
+         checkPermission(callbackId, Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR);
          SharedViewModel viewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
          long milliseconds = convertDateToLong(date_time_value);
          viewModel.getSelected().observe(getViewLifecycleOwner(), item -> {
              QueryHandlerCalendar.insertEvent(getActivity(), milliseconds,
                      milliseconds + 600*1000, item.getName() + " " + getString(R.string.exercise_program));
          });
-
     }
 
     private void checkPermission(int callbackId, String... permissionsId) {
         boolean permissions = true;
         for (String p : permissionsId) {
-            permissions = permissions && ContextCompat.checkSelfPermission(getActivity(), p) == PackageManager.PERMISSION_GRANTED;
+            if (permissions = permissions && ContextCompat.checkSelfPermission(getActivity(), p) == PackageManager.PERMISSION_GRANTED)
+            {
+                Toast.makeText(getContext(), "You have granted the permission", Toast.LENGTH_LONG).show();
+            }
+            else {
+                    ActivityCompat.requestPermissions(getActivity(), permissionsId, callbackId);
+                }
+            }
         }
 
-        if (!permissions)
-            ActivityCompat.requestPermissions(getActivity(), permissionsId, callbackId);
-    }
 
     private long convertDateToLong(String date_time_value) {
         SimpleDateFormat f = new SimpleDateFormat("yy-MM-dd HH:mm");
@@ -153,5 +167,6 @@ public class AddToCalendarFragment extends Fragment {
         }
         return milliseconds;
     }
+
 }
 

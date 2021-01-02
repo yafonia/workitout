@@ -1,0 +1,42 @@
+{
+  "stringTable": {
+    "0": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/x86",
+    "1": "--target=i686-none-linux-android22 --gcc-toolchain=/Users/yafonia/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/yafonia/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Ddecrement_lib_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "/Users/yafonia/Library/Android/sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake",
+    "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/src/main/c/CMakeLists.txt",
+    "/Users/yafonia/Library/Android/sdk/ndk/21.3.6528147/build/cmake/platforms.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/yafonia/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/x86\" clean"
+  ],
+  "buildTargetsCommand": "/Users/yafonia/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "decrement-lib-Debug-x86": {
+      "buildCommand": "/Users/yafonia/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/debug/x86\" decrement-lib",
+      "buildType": "debug",
+      "toolchain": "3358081059",
+      "abi": "x86",
+      "artifactName": "decrement-lib",
+      "files": [
+        {
+          "src": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/src/main/c/decrement-lib.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/build/intermediates/cmake/debug/obj/x86/libdecrement-lib.so"
+    }
+  },
+  "toolchains": {
+    "3358081059": {
+      "cppCompilerExecutable": "/Users/yafonia/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

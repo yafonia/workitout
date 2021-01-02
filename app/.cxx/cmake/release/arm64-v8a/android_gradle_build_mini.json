@@ -1,0 +1,19 @@
+{
+  "buildFiles": [
+    "/Users/yafonia/Library/Android/sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake",
+    "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/src/main/c/CMakeLists.txt",
+    "/Users/yafonia/Library/Android/sdk/ndk/21.3.6528147/build/cmake/platforms.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/yafonia/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/release/arm64-v8a\" clean"
+  ],
+  "buildTargetsCommand": "/Users/yafonia/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/release/arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "decrement-lib-Release-arm64-v8a": {
+      "artifactName": "decrement-lib",
+      "buildCommand": "/Users/yafonia/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/yafonia/Documents/kuliah/semester_7/workitout/app/.cxx/cmake/release/arm64-v8a\" decrement-lib",
+      "abi": "arm64-v8a",
+      "output": "/Users/yafonia/Documents/kuliah/semester_7/workitout/app/build/intermediates/cmake/release/obj/arm64-v8a/libdecrement-lib.so"
+    }
+  }
+}

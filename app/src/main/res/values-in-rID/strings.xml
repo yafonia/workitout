@@ -18,5 +18,7 @@
     <string name="program_ten_minutes">program selama 10 menit!</string>
     <string name="stop">berhenti</string>
     <string name="start_from_beginning">mulai dari awal</string>
+    <string name="finish">Workout Selesai!</string>
+    <string name ="congratulations">Selamat! Kamu telah menyelesaikan</string>
 
 </resources>

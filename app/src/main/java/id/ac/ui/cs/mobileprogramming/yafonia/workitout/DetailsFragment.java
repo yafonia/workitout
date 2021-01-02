@@ -1,7 +1,14 @@
 package id.ac.ui.cs.mobileprogramming.yafonia.workitout;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,6 +68,9 @@ public class DetailsFragment extends Fragment {
         add_to_calendar.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+                if(!isConnected()) {
+                    showCustomDialog();
+                }
                 AddToCalendarFragment addtocalendarFragment = new AddToCalendarFragment();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .add(R.id.container, addtocalendarFragment)
@@ -75,17 +85,49 @@ public class DetailsFragment extends Fragment {
             public void onClick(View v) {
                 if (item_null != null) {
                     String[] set_of_exercise = item_null.getSet().split(",");
-                    CountdownFragment countdownFragment = new CountdownFragment(set_of_exercise);
+                    String program_name = item_null.getName();
+                    CountdownFragment countdownFragment = new CountdownFragment(set_of_exercise, program_name);
                     getActivity().getSupportFragmentManager().beginTransaction()
                             .add(R.id.container, countdownFragment)
                             .addToBackStack("countdown")
                             .commit();
-
                 }
             }
         }));
     }
 
+    private boolean isConnected() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo wifiConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo mobileConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        if ((wifiConn != null && wifiConn.isConnected()) || mobileConn != null && mobileConn.isConnected()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    private void showCustomDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("Please connect to the Internet to proceed further")
+                .setCancelable(true)
+                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getFragmentManager().popBackStack();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
 
 
 }
